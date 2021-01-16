@@ -180,11 +180,51 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>匿名函数用法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#匿名函数、</span></span><br><span class="line"><span class="comment">#lambda 参数1，参数2，参数3：表达式</span></span><br><span class="line">a=int(input(<span class="string">&#x27;1:&#x27;</span>))</span><br><span class="line">b=int(input(<span class="string">&#x27;2:&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(a,b)</span><br><span class="line">c=lambda a, b : a * b</span><br><span class="line"><span class="built_in">print</span>(c(a,b))</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#匿名函数、</span></span><br><span class="line"><span class="comment">#lambda 参数1，参数2，参数3：表达式</span></span><br><span class="line">a=int(input(<span class="string">&#x27;1:&#x27;</span>))</span><br><span class="line">b=int(input(<span class="string">&#x27;2:&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(a,b)</span><br><span class="line">c=lambda a, b : a * b</span><br><span class="line"><span class="built_in">print</span>(c(a,b))</span><br><span class="line">max=lambda a,b:a <span class="keyword">if</span> a&gt;b <span class="keyword">else</span> b</span><br><span class="line"><span class="built_in">print</span>(max(a,b))</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
       <a data-url="2021/01/07/匿名函数/" data-id="ckjnrzxuk0000x8uqdata0oye" data-title="匿名函数" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python数据库sql" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2021/01/07/python数据库sql/" class="article-date">
+  <time class="dt-published" datetime="2021-01-07T11:35:51.000Z" itemprop="datePublished">2021-01-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2021/01/07/python数据库sql/">函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import sqlite3</span><br><span class="line">conn=sqlite3.connect(<span class="string">&quot;test.db&quot;</span>)<span class="comment">#打开或创建数据库文件</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;打开数据库成功！&quot;</span>)</span><br><span class="line">c=conn.cursor()<span class="comment">#获取游标</span></span><br><span class="line"><span class="comment"># sql=&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment">#     create table company</span></span><br><span class="line"><span class="comment">#            (id int primary key not null,</span></span><br><span class="line"><span class="comment">#            name text not null,</span></span><br><span class="line"><span class="comment">#            age int not null,</span></span><br><span class="line"><span class="comment">#            address char(50),</span></span><br><span class="line"><span class="comment">#            salary real);</span></span><br><span class="line"><span class="comment"># &#x27;&#x27;&#x27;创建数据库</span></span><br><span class="line"><span class="comment"># sql=&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment">#     insert into company (id,name,age,address,salary)</span></span><br><span class="line"><span class="comment">#      values (1,&#x27;张三&#x27;,56,&quot;广州&quot;,5654);</span></span><br><span class="line"><span class="comment"># &#x27;&#x27;&#x27;#插入</span></span><br><span class="line">sql=<span class="string">&quot;select id ,name,address,salary from company&quot;</span></span><br><span class="line"><span class="comment"># c.execute(sql)#执行sql语句</span></span><br><span class="line">cursor=c.execute(sql)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cursor:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;id= &quot;</span>,i[0])</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;name= &quot;</span>,i[1])</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;address= &quot;</span>,i[2])</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;salary= &quot;</span>,i[3])</span><br><span class="line"><span class="comment"># conn.commit()#提交数据库操作</span></span><br><span class="line">conn.close()<span class="comment">#关闭数据库连接</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;成功建表&quot;</span>)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="2021/01/07/python数据库sql/" data-id="ckjzj0ahi0000y4uq06rfhan4" data-title="函数" class="article-share-link">分享</a>
       
       
       
@@ -343,11 +383,11 @@
           </li>
         
           <li>
-            <a href="2021/01/05/my-first-blog/">my-first-blog</a>
+            <a href="2021/01/07/python数据库sql/">函数</a>
           </li>
         
           <li>
-            <a href="2021/01/05/hello-world/">Hello 你个头</a>
+            <a href="2021/01/05/my-first-blog/">my-first-blog</a>
           </li>
         
       </ul>
